@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
+import './app.css';
 
 class App extends Component {
 
@@ -17,5 +18,5 @@ class App extends Component {
     );
   }
 }
-
+document.body.style = 'background: grey;';
 export default App;
