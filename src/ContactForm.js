@@ -1,26 +1,27 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
+
 export default class ContactForm extends React.Component {
   render() {
     return (
       <Form>
         <FormGroup>
           <Label for="name">Name</Label>
-          <Input type="name" name="name" id="name" placeholder="password placeholder" />
+          <Input type="name" name="name" id="name" placeholder="full name" />
         </FormGroup>
 
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+          <Input type="email" name="email" id="exampleEmail"/>
         </FormGroup>
 
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="exampleEmail">Email</Label>
           <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-        </FormGroup>
+        </FormGroup> */}
 
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="contactMethod">Preferred Method of Contact</Label>
           <Input type="select" name="select" id="exampleContactMethod">
             <option>1</option>
@@ -29,7 +30,7 @@ export default class ContactForm extends React.Component {
             <option>4</option>
             <option>5</option>
           </Input>
-        </FormGroup>
+        </FormGroup> */}
         {/* <FormGroup>
           <Label for="exampleSelectMulti">Select Multiple</Label>
           <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
@@ -41,7 +42,7 @@ export default class ContactForm extends React.Component {
           </Input>
         </FormGroup> */}
         <FormGroup>
-          <Label for="exampleText">Text Area</Label>
+          <Label for="exampleText">What Type of System Are You Seeking?</Label>
           <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
         {/* <FormGroup>
@@ -81,6 +82,7 @@ export default class ContactForm extends React.Component {
         </FormGroup> */}
         <Button>Submit</Button>
       </Form>
+
     );
   }
 }
