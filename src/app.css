@@ -1,3 +1,9 @@
 .bannerImage {
     padding: 10px;
 }
+
+.contactForm {
+    padding: 10px;
+    width: 50%;
+    align-content: center;
+}
