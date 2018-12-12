@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+// import 'navigation.css';
 
 class Navigation extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div>
+      <div class="navigation">
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/" ><strong>Lopez Tech Solutions</strong></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -44,10 +45,10 @@ class Navigation extends Component {
               <NavItem>
                 <NavLink href="/contact">Contact</NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              </NavItem> */}
+              {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
@@ -57,7 +58,7 @@ class Navigation extends Component {
                   <DropdownItem divider />
                   <DropdownItem>Reset</DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>

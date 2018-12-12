@@ -3,16 +3,35 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 export default class ContactForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(event) {
+    console.log("submitting form...");
+    // event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(event);
+    console.log(data.get('name'));
+    console.log(data.get('email'));  
+    // alert(JSON.stringify(event))
+    alert("Name: " + data.get('name') + "\nEmail: " + data.get('email') + 
+          "\nContact Method: " + data.get('radio1') + 
+          "\nContact Method: " + data.get('radio2'));
+
+  }
+
   render() {
     return (
-      <Form>
-        <FormGroup>
+      
+      <form onSubmit={this.handleSubmit}>
+        <FormGroup >
           <Label for="name">Name</Label>
           <Input type="name" name="name" id="name" placeholder="full name" />
         </FormGroup>
 
         <FormGroup>
-          <Label for="exampleEmail">Email</Label>
+          <Label for="email">Email</Label>
           <Input type="email" name="email" id="exampleEmail"/>
         </FormGroup>
 
@@ -54,25 +73,25 @@ export default class ContactForm extends React.Component {
           </FormText>
         </FormGroup> */}
         <FormGroup tag="fieldset">
-          <legend>Preffered Method of Contact</legend>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" />{' '}
-                  Phone
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" />{' '}
-                  Email
-            </Label>
-          </FormGroup>
-          {/* <FormGroup check disabled>
-            <Label check>
-              <Input type="radio" name="radio1" disabled />{' '}
-              Option three is disabled
-            </Label>
-          </FormGroup> */}
+            <legend>Preffered Method of Contact</legend>
+            <FormGroup check>
+              <Label check for="phoneContact">
+                <Input type="radio" name="radio1" />{' '}
+                    Phone
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check for="emailContact">
+                <Input type="radio" name="radio2" />{' '}
+                    Email
+              </Label>
+            </FormGroup>
+            {/* <FormGroup check disabled>
+              <Label check>
+                <Input type="radio" name="radio1" disabled />{' '}
+                Option three is disabled
+              </Label>
+            </FormGroup> */}
         </FormGroup>
         {/* <FormGroup check>
           <Label check>
@@ -80,8 +99,8 @@ export default class ContactForm extends React.Component {
             Check me out
           </Label>
         </FormGroup> */}
-        <Button>Submit</Button>
-      </Form>
+        <Button type="submit" >Submit</Button>
+      </form>
 
     );
   }
