@@ -16,9 +16,9 @@ export default class ContactForm extends React.Component {
     console.log(data.get('email'));  
     // alert(JSON.stringify(event))
     alert("Name: " + data.get('name') + "\nEmail: " + data.get('email') + 
+          "\nSystem Type: " + data.get('systemType') + 
           "\nContact Method: " + data.get('radio1') + 
           "\nContact Method: " + data.get('radio2'));
-
   }
 
   render() {
@@ -60,9 +60,10 @@ export default class ContactForm extends React.Component {
             <option>5</option>
           </Input>
         </FormGroup> */}
+        
         <FormGroup>
-          <Label for="exampleText">What Type of System Are You Seeking?</Label>
-          <Input type="textarea" name="text" id="exampleText" />
+          <Label for="systemType">What Type of System Are You Seeking?</Label>
+          <Input type="textarea" name="systemType" id="systemType" />
         </FormGroup>
         {/* <FormGroup>
           <Label for="exampleFile">File</Label>
