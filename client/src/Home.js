@@ -7,7 +7,7 @@ export default class Home extends React.Component {
     return (
         <div>
             <p class="bannerImage" style={style}>
-            <img  src={require("./mainpage_banner2.jpg")} alt="Hello" width={"90%"} /> 
+            <img  src={require("./potential-banner-1.png")} alt="Hello" width={"90%"} /> 
             </p>
             {/* <p class="bannerImage" style={style}>
                 <img  src={require("./potential-banner-1.png")} alt="Hello" width={"90%"} /> 
