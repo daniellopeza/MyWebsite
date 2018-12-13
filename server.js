@@ -44,7 +44,7 @@ app.post('/api/form', (req, res) => {
     let mailOptions = {
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      replyTo: process.env.EMAIl,
+      replyTo: process.env.EMAIL,
       subject: 'New Message',
       text: req.body.message,
       html: htmlEmail 
