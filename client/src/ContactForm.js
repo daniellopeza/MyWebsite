@@ -53,7 +53,7 @@ export default class ContactForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <FormGroup >
           <Label for="name">Name</Label>
-          <Input type="name" name="name" id="name" placeholder="full name" onChange={this.handleChange}/>
+          <Input type="name" name="name" id="name" onChange={this.handleChange}/>
         </FormGroup>
 
         <FormGroup>

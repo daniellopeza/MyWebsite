@@ -1,4 +1,5 @@
 import React from 'react';
+import MobileStatsTable from './MobileStatsTable';
 
 export default class Home extends React.Component {
   render() {
@@ -12,6 +13,9 @@ export default class Home extends React.Component {
             {/* <p class="bannerImage" style={style}>
                 <img  src={require("./potential-banner-1.png")} alt="Hello" width={"90%"} /> 
             </p> */}
+            
+            <MobileStatsTable />
+
             <p class="bannerImage" style={style}>
                 <img  src={require("./mobile-usage-statistics.jpg")} alt="Hello" width={"90%"} /> 
             </p>
