@@ -25,6 +25,19 @@ export default class Services extends React.Component {
                 </Alert>
             </div> 
 
+            <div className="colorfulAlert"> 
+                <Alert color="secondary">
+                    <center>
+                        <strong> Software </strong>
+                        <br></br>
+                        <br></br>
+                    Need a website? Mobile application? It's difficult gaining awareness and credibility without a web presence now-a-days.
+                    I'll sit down with you and talk about your needs, and your businesses. And then build you a system that best suits your needs. 
+                    </center>
+                </Alert>
+            </div> 
+
+
         </div>
     );
   }
