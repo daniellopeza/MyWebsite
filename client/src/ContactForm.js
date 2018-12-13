@@ -1,24 +1,50 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import axios from 'axios';
 
 
 export default class ContactForm extends React.Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      name: '',
+      email: '',
+      systemType: '',
+      contactMethod: '',
+    }
+
+    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleSubmit(event) {
+
+  onRadioBtnClick(rSelected) {
+
+    this.setState({ rSelected });
+    console.log("Param rSelected = ", rSelected);
+  }
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
+    // console.log("STATE = ", this.state)
+  }
+
+  // removed extension @builtin TypeScript and JavaScript Language Features
+  // to use async with JS file
+  async handleSubmit(event){
     console.log("submitting form...");
-    // event.preventDefault();
-    const data = new FormData(event.target);
-    console.log(event);
-    console.log(data.get('name'));
-    console.log(data.get('email'));  
-    // alert(JSON.stringify(event))
-    alert("Name: " + data.get('name') + "\nEmail: " + data.get('email') + 
-          "\nSystem Type: " + data.get('systemType') + 
-          "\nContact Method: " + data.get('radio1') + 
-          "\nContact Method: " + data.get('radio2'));
+    event.preventDefault(); // prevents refresh after submittion
+
+    const {name, email, systemType, rSelected} = this.state;
+
+    console.log("STATE= ", this.state)
+    const form = await axios.post('/api/form', {
+        name, // == name: name;
+        email,
+        systemType,
+        rSelected,
+    })
   }
 
   render() {
@@ -27,12 +53,12 @@ export default class ContactForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <FormGroup >
           <Label for="name">Name</Label>
-          <Input type="name" name="name" id="name" placeholder="full name" />
+          <Input type="name" name="name" id="name" placeholder="full name" onChange={this.handleChange}/>
         </FormGroup>
 
         <FormGroup>
           <Label for="email">Email</Label>
-          <Input type="email" name="email" id="exampleEmail"/>
+          <Input type="email" name="email" id="exampleEmail" onChange={this.handleChange}/>
         </FormGroup>
 
         {/* <FormGroup>
@@ -63,7 +89,7 @@ export default class ContactForm extends React.Component {
         
         <FormGroup>
           <Label for="systemType">What Type of System Are You Seeking?</Label>
-          <Input type="textarea" name="systemType" id="systemType" />
+          <Input type="textarea" name="systemType" id="systemType" onChange={this.handleChange}/>
         </FormGroup>
         {/* <FormGroup>
           <Label for="exampleFile">File</Label>
@@ -73,33 +99,26 @@ export default class ContactForm extends React.Component {
             It's a bit lighter and easily wraps to a new line.
           </FormText>
         </FormGroup> */}
-        <FormGroup tag="fieldset">
+        <FormGroup tag="fieldset" row>
             <legend>Preffered Method of Contact</legend>
+
             <FormGroup check>
-              <Label check for="phoneContact">
+              <Label check for="phoneContact" onClick={() => this.onRadioBtnClick(1)} >
                 <Input type="radio" name="radio1" />{' '}
                     Phone
               </Label>
             </FormGroup>
+
             <FormGroup check>
-              <Label check for="emailContact">
-                <Input type="radio" name="radio2" />{' '}
+              <Label check for="emailContact" onClick={() => this.onRadioBtnClick(2)}>
+                <Input type="radio" name="radio1" />{' '}
                     Email
               </Label>
+
             </FormGroup>
-            {/* <FormGroup check disabled>
-              <Label check>
-                <Input type="radio" name="radio1" disabled />{' '}
-                Option three is disabled
-              </Label>
-            </FormGroup> */}
+
         </FormGroup>
-        {/* <FormGroup check>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Check me out
-          </Label>
-        </FormGroup> */}
+
         <Button type="submit" >Submit</Button>
       </form>
 
