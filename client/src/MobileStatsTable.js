@@ -23,7 +23,7 @@ export default class MobileStatsTable extends React.Component {
           </tr>
 
           <tr>
-            <th scope="row">90 Percent Of Retail Shoppers Use Smartphones In Stores
+            <th scope="row">90% of smartphone owners use their phones while making purchasing decisions in a brick and mortar store.
               <br></br>
               <i>-Greg Sterling, Marketing Land</i>
             </th>
