@@ -45,9 +45,15 @@ class Navigation extends Component {
               <NavItem>
                 <NavLink href="/">Home</NavLink>
               </NavItem>
+
+              <NavItem>
+                <NavLink href="/services">Services</NavLink>
+              </NavItem>
+              
               <NavItem>
                 <NavLink href="/contact">Contact</NavLink>
               </NavItem>
+
             </Nav>
           </Collapse>
         </Navbar>
