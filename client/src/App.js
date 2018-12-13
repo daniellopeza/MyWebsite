@@ -27,5 +27,5 @@ class App extends Component {
     );
   }
 }
-document.body.style = 'background: white;';
+document.body.style = 'background: black;';
 export default App;

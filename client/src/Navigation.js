@@ -33,6 +33,9 @@ class Navigation extends Component {
 
   render() {
     return (
+      <nav class="sticky-top">
+      <div class="container">
+
       <div class="navigation">
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/" ><strong>Lopez Tech Solutions</strong></NavbarBrand>
@@ -45,24 +48,13 @@ class Navigation extends Component {
               <NavItem>
                 <NavLink href="/contact">Contact</NavLink>
               </NavItem>
-              {/* <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem> */}
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
       </div>
+
+      </div>
+      </nav>
     );
   }
 }
